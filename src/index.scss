@@ -1,0 +1,101 @@
+$primary: #312e81;
+$dark-800: #1f2937;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: 'Shabnam';
+    font-weight: normal;
+    direction: rtl;
+    color: #222;
+}
+
+@font-face {
+    font-family: 'Shabnam';
+    src: url('assets/fonts/Shabnam.woff') format('woff');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Shabnam';
+    src: url('assets/fonts/Shabnam-Light.woff') format('woff');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'Shabnam';
+    src: url('assets/fonts/Shabnam-Bold.woff') format('woff');
+    font-weight: bold;
+}
+
+.lineWall {
+    position: fixed;
+    opacity: 0.03;
+    top: 30px;
+    right: 30px;
+}
+
+.shadow-img {
+    filter: drop-shadow(0 0 10px #999);
+}
+.text-white {
+	svg {
+		fill: white;
+		color: white;
+	}
+}
+.text-primary {
+	svg {
+		fill: $primary;
+		color: $primary;
+	}
+}
+.overflow-visible {
+	overflow: visible !important;
+}
+.change-contrast {
+	filter: brightness(0.96);
+}
+.ltr {
+	direction: ltr !important;
+}
+.-z-10 {
+	z-index: -10;
+}
+.max-h-screen--p-3 {
+	height: calc(100vh - 3rem);
+}
+@media screen and (min-width: 768px) {
+	.app-main {
+		&::before {
+			@media (prefers-color-scheme: dark){
+				background-color: $dark-800;
+			}
+			content: '';
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			background-color: white;
+			border-top-right-radius: 20px;
+			box-shadow: 5px -5px 0 2px $primary;
+		}
+		&::after {
+			@media (prefers-color-scheme: dark){
+				background-color: $dark-800;
+			}
+			content: '';
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			background-color: white;
+			border-bottom-right-radius: 20px;
+			box-shadow: 5px 5px 0 2px $primary;
+		}
+	}
+}

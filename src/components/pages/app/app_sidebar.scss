@@ -1,0 +1,49 @@
+$primary: #312e81;
+$secondary: rgb(251,191,36);
+nav {
+    ul {
+        legend {
+            color: $secondary;
+            padding: 0px 20px;
+
+            svg{
+                margin: 0px 7px ;
+                fill: $secondary;
+            }
+        }
+        li {
+            a {
+                font-size: small;
+
+                svg{
+                    color: #fff;
+                    fill: #fff;
+                }
+
+                &.active {
+                    $value : -10;
+                    position: relative;
+                    &::before{
+                        top: $value+px;
+                        border-bottom-left-radius: abs($value)+px;
+                        box-shadow: -1px calc(abs($value)/2)+px 0 1px white;
+                    }
+                    &::after {
+                        border-top-left-radius: abs($value)+px;
+                        bottom: $value+px;
+                        box-shadow: -1px calc($value/2)+px 0 1px white;
+                    }
+                    &::before, &::after {
+                        z-index: 1;
+                        position: absolute;
+                        left: 0;
+                        content: '';
+                        width:abs($value)+px;
+                        height:abs($value)+px;
+                        background: $primary;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "معلم یار",
+  "name": "معلم یار - دستیار هوشمند معلمان",
   "icons": [
     {
       "src": "favicon.ico",
